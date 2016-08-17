@@ -7,7 +7,7 @@ import (
 
   "github.com/labstack/echo"
 
-  "../datasources"
+  "github.com/Tyler-Scheerens/cdm/server/datasources"
 )
 
 type User struct {

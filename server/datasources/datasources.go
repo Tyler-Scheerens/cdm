@@ -7,7 +7,7 @@ import (
   _ "github.com/go-sql-driver/mysql"
   "github.com/jmoiron/sqlx"
 
-  "../conf"
+  "github.com/Tyler-Scheerens/cdm/server/conf"
 )
 
 type DatasourceManager struct {

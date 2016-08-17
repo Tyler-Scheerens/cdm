@@ -7,9 +7,9 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/engine/fasthttp"
 
-	"./conf"
-	"./datasources"
-	"./handlers"
+	"github.com/Tyler-Scheerens/cdm/server/conf"
+	"github.com/Tyler-Scheerens/cdm/server/datasources"
+	"github.com/Tyler-Scheerens/cdm/server/handlers"
 )
 
 func checkError(err error) {

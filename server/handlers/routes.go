@@ -3,7 +3,7 @@ package handlers
 import (
   "github.com/labstack/echo"
 
-  "../models"
+  "github.com/Tyler-Scheerens/cdm/server/handlers"
 )
 
 func Register(e *echo.Echo) {
