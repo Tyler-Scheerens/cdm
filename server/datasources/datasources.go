@@ -4,7 +4,7 @@ import (
   "fmt"
   "log"
 
-  _ "github.com/go-sql-driver/mysql"
+  _ "github.com/lib/pq"
   "github.com/jmoiron/sqlx"
 
   "github.com/Tyler-Scheerens/cdm/server/conf"
@@ -30,9 +30,7 @@ func GetDb() *sqlx.DB {
 }
 
 func AddDatasource(config *conf.Config) {
-  datasourceBind := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True",
-    config.Datasource.Username,
-    config.Datasource.Password,
+  datasourceBind := fmt.Sprintf("host=%s port=%s dbname=%s sslmode=disable",
     config.Datasource.Host,
     config.Datasource.Port,
     config.Datasource.Database,

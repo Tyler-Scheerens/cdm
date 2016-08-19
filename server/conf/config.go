@@ -35,8 +35,10 @@ type Config struct {
 }
 
 type Server struct {
-	IP   string `yaml:"ip"`
-	Port string `yaml:"port"`
+	IP       string `yaml:"ip"`
+	Port     string `yaml:"port"`
+	Username string `yaml:"username"`
+	Password string `yaml:"password"`
 }
 
 type Datasource struct {

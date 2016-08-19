@@ -1,10 +1,10 @@
 server:
   ip: "localhost"
   port: "8000"
+  username: admin
+  password: admin
 datasource:
-  name: "mysql"
+  name: "postgres"
   host: "localhost"
-  port: "3306"
-  username: "root"
-  password: "root"
-  database: "configuration"
+  port: "5432"
+  database: "cdm"

@@ -13,9 +13,9 @@ import (
 )
 
 func checkError(err error) {
-  if err != nil {
-    log.Fatal(err)
-  }
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
@@ -25,7 +25,7 @@ func main() {
 	datasources.AddDatasource(config)
 
 	e := echo.New()
-	handlers.Register(e);
+	handlers.Register(config, e)
 
 	serverBind := fmt.Sprintf("%s:%s",
 		config.Server.IP,
