@@ -35,6 +35,7 @@ type Config struct {
 }
 
 type Server struct {
+	UIRoot   string `yaml:"uiroot"`
 	IP       string `yaml:"ip"`
 	Port     string `yaml:"port"`
 	Username string `yaml:"username"`

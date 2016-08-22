@@ -1,5 +1,5 @@
-DROP TABLE user;
-DROP TABLE alert;
+DROP TABLE login cascade;
+DROP TABLE alert cascade;
 DROP TABLE any_alert;
 DROP TABLE blacklist_alert;
 DROP TABLE cardinality_alert;
@@ -25,7 +25,8 @@ CREATE TABLE alert (
   es_index TEXT,
   rule_name TEXT,
   rule_type TEXT,
-  alert_type TEXT
+  alert_type TEXT,
+  alert_options JSONB
 );
 
 CREATE TABLE any_alert (

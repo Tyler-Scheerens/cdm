@@ -1,4 +1,5 @@
 server:
+  uiroot: "../cdm-ui/"
   ip: "localhost"
   port: "8000"
   username: admin

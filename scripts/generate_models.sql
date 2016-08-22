@@ -12,7 +12,7 @@ WITH models AS (
         -- add your own type converters as needed or it will default to 'string'
         ELSE 'string'
         END AS type_info,
-        '`json:"' || column_name ||'"`' AS annotation    
+        '`json:"' || column_name || '" db:"' || column_name || '"`' AS annotation    
     FROM information_schema.columns
     WHERE table_schema IN ('dvs_app', 'dvs_system', 'public')
     ORDER BY table_schema, table_name, ordinal_position
