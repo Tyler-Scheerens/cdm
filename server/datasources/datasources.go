@@ -13,6 +13,7 @@ import (
 type DatasourceManager struct {
   Name string
   Bind string
+  DB *sqlx.DB
 }
 
 var manager = DatasourceManager{}
@@ -21,12 +22,6 @@ func checkError(err error) {
   if err != nil {
     log.Fatal(err)
   }
-}
-
-func GetDb() *sqlx.DB {
-  db, err := sqlx.Connect(manager.Name, manager.Bind)
-  checkError(err)
-  return db
 }
 
 func AddDatasource(config *conf.Config) {
@@ -38,4 +33,12 @@ func AddDatasource(config *conf.Config) {
 
   manager.Name = config.Datasource.Name
   manager.Bind = datasourceBind
+
+  db, err := sqlx.Connect(manager.Name, manager.Bind)
+  manager.DB = db
+  checkError(err)
+}
+
+func GetDb() *sqlx.DB {
+  return manager.DB
 }
